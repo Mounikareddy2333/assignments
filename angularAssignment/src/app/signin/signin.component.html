@@ -1,0 +1,27 @@
+
+<form [formGroup] = "signinForm" (ngSubmit)="onsubmit()">
+<div
+    style="position: absolute; top: 25%; left: 40%; text-align: center; border: 1px solid rgb(0, 81, 255); padding: 20px; border-radius: 10px;">
+    <div style="display: flex; align-items:center; justify-content: space-between;">
+        
+        <h5>User name :</h5>
+        <input type="text" formControlName="username" id="userName" class="form-control"
+            style="height: 24px; margin-left: 5px">
+    </div>
+    <div style="display: flex; align-items:center; justify-content: space-between;">
+        <h5>Password :</h5>
+        <input type="password" formControlName="password" id="password" class="form-control"
+            style="height: 24px; margin-left: 5px">
+    </div>
+
+    <input type="submit" value="Submit">
+</div>
+</form>
+
+<div *ngIf = "loggedInUser">
+    <h3> Welcome, {{loggedInUser.firstname}} {{loggedInUser.lastname}}</h3>
+    <p>
+    <strong>Username: </strong> {{loggedInUser.username}} <br>
+    <strong>Email: </strong> {{loggedInUser.email}}
+    </p>
+</div>
